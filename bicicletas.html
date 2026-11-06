@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça os modelos de bicicletas disponíveis para aluguel na EcoBike SP.">
+    <title>Catálogo | EcoBike SP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/bicicletas.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navegação principal">
+            <a class="brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a class="active" href="bicicletas.html">Catálogo</a>
+                <a href="simulador.html">Simulador</a>
+                <a href="reservas.html">Pré-reservas</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro">Modo escuro</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero container">
+            <span class="eyebrow">CATÁLOGO ECOBIKE</span>
+            <h1>Encontre sua próxima <span>bicicleta.</span></h1>
+            <p>Três modelos, diferentes possibilidades. Escolha o que combina com seu trajeto.</p>
+        </section>
+
+        <section class="catalog-section container">
+            <div class="catalog-toolbar">
+                <div><span class="eyebrow">MODELOS DISPONÍVEIS</span><p class="catalog-count" id="catalogCount">3 bicicletas encontradas</p></div>
+                <div class="filters" role="group" aria-label="Filtrar bicicletas">
+                    <button class="filter-btn active" type="button" data-filter="todos" aria-pressed="true">Todas</button>
+                    <button class="filter-btn" type="button" data-filter="urbana" aria-pressed="false">Urbana</button>
+                    <button class="filter-btn" type="button" data-filter="eletrica" aria-pressed="false">Elétrica</button>
+                    <button class="filter-btn" type="button" data-filter="cargo" aria-pressed="false">Cargo</button>
+                </div>
+            </div>
+
+            <div class="catalog-grid" id="catalogGrid">
+                <article class="bike-card" data-category="urbana">
+                    <div class="bike-image"><img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=900&q=85" alt="Bicicleta urbana para deslocamentos diários"><span class="bike-number">01</span></div>
+                    <div class="bike-info"><div class="bike-title-row"><div><span class="plan-tag">DIA A DIA</span><h2>Urbana</h2></div><p class="bike-price">R$ 12<small>/hora</small></p></div><p class="bike-description">Leve, prática e confortável para circular pelas ruas da cidade.</p><div class="bike-specs"><span>Uso cotidiano</span><span>Conforto</span><span>Praticidade</span></div><a class="btn btn-primary btn-full" href="simulador.html?tipo=urbana">Simular aluguel</a></div>
+                </article>
+
+                <article class="bike-card" data-category="eletrica">
+                    <div class="bike-image"><img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=900&q=85" alt="Bicicleta elétrica para trajetos mais longos"><span class="bike-number">02</span></div>
+                    <div class="bike-info"><div class="bike-title-row"><div><span class="plan-tag">MAIS CONFORTO</span><h2>Elétrica</h2></div><p class="bike-price">R$ 20<small>/hora</small></p></div><p class="bike-description">Assistência elétrica para pedalar com menos esforço em trajetos maiores.</p><div class="bike-specs"><span>Assistência elétrica</span><span>Autonomia</span><span>Conforto</span></div><a class="btn btn-primary btn-full" href="simulador.html?tipo=eletrica">Simular aluguel</a></div>
+                </article>
+
+                <article class="bike-card" data-category="cargo">
+                    <div class="bike-image"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85" alt="Bicicleta cargo para transporte de objetos"><span class="bike-number">03</span></div>
+                    <div class="bike-info"><div class="bike-title-row"><div><span class="plan-tag">VERSATILIDADE</span><h2>Cargo</h2></div><p class="bike-price">R$ 25<small>/hora</small></p></div><p class="bike-description">Uma opção versátil para transportar objetos e pequenas cargas.</p><div class="bike-specs"><span>Transporte</span><span>Estabilidade</span><span>Versatilidade</span></div><a class="btn btn-primary btn-full" href="simulador.html?tipo=cargo">Simular aluguel</a></div>
+                </article>
+            </div>
+            <p class="empty-state" id="semResultados" hidden>Nenhuma bicicleta encontrada para esse filtro.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-content"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a><p>Mobilidade inteligente para uma cidade em movimento.</p><span>© 2026 EcoBike SP</span></div></footer>
+</body>
+</html>

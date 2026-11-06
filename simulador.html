@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simule o valor do aluguel da sua bicicleta na EcoBike SP.">
+    <title>Simulador | EcoBike SP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/simulador.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navegação principal">
+            <a class="brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="bicicletas.html">Catálogo</a>
+                <a class="active" href="simulador.html">Simulador</a>
+                <a href="reservas.html">Pré-reservas</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro">Modo escuro</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero container">
+            <span class="eyebrow">SIMULADOR DE ALUGUEL</span>
+            <h1>Seu trajeto, <span>seu preço.</span></h1>
+            <p>Informe o modelo e o tempo de utilização para descobrir o valor do aluguel.</p>
+        </section>
+
+        <section class="calculator-section container">
+            <div class="calculator-panel">
+                <div class="calculator-heading"><span class="eyebrow">01 / CONFIGURE SEU ALUGUEL</span><h2>Calcule sua pedalada.</h2><p>Preencha os campos abaixo para realizar a simulação.</p></div>
+                <form id="formSimulador" class="calculator-form">
+                    <div class="form-group">
+                        <label for="tipo">Modelo da bicicleta</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Selecione uma bicicleta</option>
+                            <option value="urbana">Urbana — R$ 12/h</option>
+                            <option value="eletrica">Elétrica — R$ 20/h</option>
+                            <option value="cargo">Cargo — R$ 25/h</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="horas">Quantidade de horas</label>
+                        <input type="number" id="horas" name="horas" min="1" max="24" step="1" placeholder="Ex.: 3" required>
+                        <small>Informe um número inteiro entre 1 e 24 horas.</small>
+                    </div>
+                    <button class="btn btn-primary btn-full" type="submit">Calcular valor</button>
+                </form>
+            </div>
+
+            <aside class="result-panel" aria-live="polite">
+                <span class="eyebrow">02 / RESULTADO</span>
+                <div class="result-icon">R$</div>
+                <h2>Quanto vai custar?</h2>
+                <p id="resultado">O resultado da sua simulação aparecerá aqui.</p>
+                <div class="result-details" id="detalhesResultado" hidden>
+                    <div><span>Modelo</span><strong id="resultadoTipo">—</strong></div>
+                    <div><span>Tempo</span><strong id="resultadoHoras">—</strong></div>
+                    <div><span>Subtotal</span><strong id="resultadoSubtotal">—</strong></div>
+                    <div><span>Desconto</span><strong id="resultadoDesconto">—</strong></div>
+                    <div class="result-total"><span>Total</span><strong id="resultadoTotal">—</strong></div>
+                </div>
+                <a href="reservas.html" class="text-link">Ir para pré-reservas</a>
+                <p class="discount-note">Aluguéis acima de 5 horas recebem 10% de desconto.</p>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-content"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a><p>Mobilidade inteligente para uma cidade em movimento.</p><span>© 2026 EcoBike SP</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoBike SP: aluguel de bicicletas urbanas, elétricas e cargo por hora em São Paulo.">
+    <title>EcoBike SP | Mobilidade urbana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navegação principal">
+            <a class="brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a>
+            <div class="nav-links">
+                <a class="active" href="index.html">Início</a>
+                <a href="bicicletas.html">Catálogo</a>
+                <a href="simulador.html">Simulador</a>
+                <a href="reservas.html">Pré-reservas</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro">Modo escuro</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <span class="eyebrow">MOBILIDADE URBANA • SÃO PAULO</span>
+                <h1>A cidade é sua.<br><span>Vá mais longe.</span></h1>
+                <p>Alugue uma bicicleta, descubra novos caminhos e transforme a maneira como você se movimenta pela cidade.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="bicicletas.html">Conheça as bicicletas</a>
+                    <a class="btn btn-secondary" href="simulador.html">Calcular aluguel</a>
+                </div>
+                <div class="hero-data">
+                    <div><strong>03</strong><span>Modelos disponíveis</span></div>
+                    <div><strong>R$ 12</strong><span>Valor inicial por hora</span></div>
+                    <div><strong>10%</strong><span>Desconto acima de 5h</span></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1100&q=85" alt="Bicicleta urbana encostada em uma parede">
+                <div class="image-caption"><span>01 / MOBILIDADE</span><strong>Seu próximo caminho começa aqui.</strong></div>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container intro-grid">
+                <div>
+                    <span class="eyebrow">COMO FUNCIONA</span>
+                    <h2>Simples para você.<br>Melhor para a cidade.</h2>
+                </div>
+                <p>Escolha o modelo ideal, informe por quantas horas deseja pedalar e consulte o preço antes de fazer sua pré-reserva. Sem complicação.</p>
+            </div>
+        </section>
+
+        <section class="container home-plans section-space">
+            <div class="section-heading">
+                <div><span class="eyebrow">ESCOLHA SEU MODELO</span><h2>Uma bicicleta para cada caminho.</h2></div>
+                <a class="text-link" href="bicicletas.html">Ver catálogo completo</a>
+            </div>
+            <div class="plan-grid">
+                <article class="plan-card">
+                    <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=700&q=85" alt="Bicicleta urbana">
+                    <div class="plan-body"><span class="plan-tag">DIA A DIA</span><h3>Urbana</h3><p>Praticidade para seus deslocamentos pela cidade.</p><strong>R$ 12 <small>/ hora</small></strong><a href="simulador.html?tipo=urbana" class="text-link">Calcular valor</a></div>
+                </article>
+                <article class="plan-card">
+                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=700&q=85" alt="Bicicleta elétrica">
+                    <div class="plan-body"><span class="plan-tag">MAIS CONFORTO</span><h3>Elétrica</h3><p>Mais autonomia para percorrer distâncias maiores.</p><strong>R$ 20 <small>/ hora</small></strong><a href="simulador.html?tipo=eletrica" class="text-link">Calcular valor</a></div>
+                </article>
+                <article class="plan-card">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=85" alt="Bicicleta de carga">
+                    <div class="plan-body"><span class="plan-tag">VERSATILIDADE</span><h3>Cargo</h3><p>Espaço e estabilidade para transportar objetos.</p><strong>R$ 25 <small>/ hora</small></strong><a href="simulador.html?tipo=cargo" class="text-link">Calcular valor</a></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="callout-section">
+            <div class="container callout-content">
+                <div><span class="eyebrow">PLANEJE SEU PEDAL</span><h2>Quanto tempo você precisa?</h2><p>Simule o preço e descubra quanto vai pagar pelo aluguel.</p></div>
+                <a class="btn btn-light" href="simulador.html">Abrir simulador</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a><p>Mobilidade inteligente para uma cidade em movimento.</p><span>© 2026 EcoBike SP</span></div>
+    </footer>
+</body>
+</html>
