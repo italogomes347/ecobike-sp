@@ -1,9 +1,21 @@
 
+'use strict';
+
+/* ===== PREÇOS ===== */
+
 const precos = {
     urbana: 12,
     eletrica: 20,
     cargo: 25
 };
+
+const nomesBicicletas = {
+    urbana: 'Urbana',
+    eletrica: 'Elétrica',
+    cargo: 'Cargo'
+};
+
+/* ===== FORMATAÇÃO ===== */
 
 function formatarMoeda(valor) {
     return valor.toLocaleString('pt-BR', {
@@ -12,10 +24,17 @@ function formatarMoeda(valor) {
     });
 }
 
+/* ===== CÁLCULO ===== */
+
 function calcularValor(horas, tipo) {
     const precoHora = precos[tipo];
 
-    if (!precoHora || !Number.isInteger(horas) || horas < 1 || horas > 24) {
+    if (
+        !precoHora ||
+        !Number.isInteger(horas) ||
+        horas < 1 ||
+        horas > 24
+    ) {
         return null;
     }
 
@@ -33,6 +52,8 @@ function calcularValor(horas, tipo) {
     };
 }
 
+/* ===== EXIBIÇÃO ===== */
+
 function mostrarResultado(resultado) {
     const resultadoTexto = document.querySelector('#resultado');
     const detalhes = document.querySelector('#detalhesResultado');
@@ -40,30 +61,38 @@ function mostrarResultado(resultado) {
     if (!resultadoTexto || !detalhes) return;
 
     if (!resultado) {
-        resultadoTexto.textContent = 'Informe uma bicicleta e uma quantidade de horas válida.';
+        resultadoTexto.textContent =
+            'Informe uma bicicleta e uma quantidade de horas válida.';
+
         detalhes.hidden = true;
         return;
     }
 
-    const nomes = {
-        urbana: 'Urbana',
-        eletrica: 'Elétrica',
-        cargo: 'Cargo'
-    };
+    document.querySelector('#resultadoTipo').textContent =
+        nomesBicicletas[resultado.tipo];
 
-    document.querySelector('#resultadoTipo').textContent = nomes[resultado.tipo];
     document.querySelector('#resultadoHoras').textContent =
         `${resultado.horas} ${resultado.horas === 1 ? 'hora' : 'horas'}`;
+
+    document.querySelector('#resultadoPrecoHora').textContent =
+        `${formatarMoeda(resultado.precoHora)}/h`;
+
     document.querySelector('#resultadoSubtotal').textContent =
         formatarMoeda(resultado.subtotal);
+
     document.querySelector('#resultadoDesconto').textContent =
-        formatarMoeda(resultado.desconto);
+        resultado.desconto > 0
+            ? `− ${formatarMoeda(resultado.desconto)}`
+            : formatarMoeda(0);
+
     document.querySelector('#resultadoTotal').textContent =
         formatarMoeda(resultado.total);
 
-    resultadoTexto.textContent = 'Simulação calculada com sucesso.';
+    resultadoTexto.textContent = 'Sua simulação foi calculada com sucesso.';
     detalhes.hidden = false;
 }
+
+/* ===== FORMULÁRIO ===== */
 
 const formSimulador = document.querySelector('#formSimulador');
 
@@ -74,23 +103,53 @@ if (formSimulador) {
     const parametros = new URLSearchParams(window.location.search);
     const tipoSelecionado = parametros.get('tipo');
 
-    if (tipoSelecionado && precos[tipoSelecionado]) {
+    if (tipoSelecionado && Object.hasOwn(precos, tipoSelecionado)) {
         campoTipo.value = tipoSelecionado;
+    }
+
+    function obterSimulacao() {
+        const tipo = campoTipo.value;
+        const valorHoras = campoHoras.value.trim();
+
+        if (!tipo || valorHoras === '') {
+            mostrarResultado(null);
+            return;
+        }
+
+        const horas = Number(valorHoras);
+        const resultado = calcularValor(horas, tipo);
+
+        mostrarResultado(resultado);
     }
 
     formSimulador.addEventListener('submit', (evento) => {
         evento.preventDefault();
 
         const tipo = campoTipo.value;
-        const horas = Number(campoHoras.value);
+        const valorHoras = campoHoras.value.trim();
+        const horas = Number(valorHoras);
 
-        if (!tipo || !campoHoras.value.trim() || !Number.isInteger(horas) || horas < 1 || horas > 24) {
+        if (
+            !tipo ||
+            valorHoras === '' ||
+            !Number.isInteger(horas) ||
+            horas < 1 ||
+            horas > 24
+        ) {
             mostrarResultado(null);
-            campoHoras.focus();
+
+            if (!tipo) {
+                campoTipo.focus();
+            } else {
+                campoHoras.focus();
+            }
+
             return;
         }
 
-        const resultado = calcularValor(horas, tipo);
-        mostrarResultado(resultado);
+        mostrarResultado(calcularValor(horas, tipo));
     });
+
+    campoTipo.addEventListener('change', obterSimulacao);
+    campoHoras.addEventListener('input', obterSimulacao);
 }

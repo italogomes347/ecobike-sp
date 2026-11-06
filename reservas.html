@@ -6,57 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cadastre e organize suas pré-reservas de bicicletas na EcoBike SP.">
     <title>Pré-reservas | EcoBike SP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
     <script src="js/main.js" defer></script>
     <script src="js/reservas.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
     <header class="site-header">
         <nav class="navbar container" aria-label="Navegação principal">
             <a class="brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a>
-            <div class="nav-links">
+
+            <button class="menu-toggle" id="menuToggle" type="button"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
                 <a href="index.html">Início</a>
                 <a href="bicicletas.html">Catálogo</a>
                 <a href="simulador.html">Simulador</a>
-                <a class="active" href="reservas.html">Pré-reservas</a>
+                <a class="active" aria-current="page" href="reservas.html">Pré-reservas</a>
                 <a href="sobre.html">Sobre</a>
             </div>
+
             <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro">Modo escuro</button>
         </nav>
     </header>
 
-    <main>
-        <section class="page-hero container">
+    <main id="conteudo">
+        <section class="page-hero container reveal">
             <span class="eyebrow">ORGANIZE SEU PEDAL</span>
             <h1>Sua próxima viagem <span>começa aqui.</span></h1>
             <p>Adicione seu nome à lista de pré-reservas e organize seus próximos passeios.</p>
         </section>
 
         <section class="reservation-section container">
-            <div class="reservation-form-panel">
+            <div class="reservation-form-panel reveal">
                 <span class="eyebrow">01 / NOVA PRÉ-RESERVA</span>
                 <h2>Adicionar nome</h2>
                 <p>Digite seu nome para incluí-lo na lista.</p>
-                <form id="formReserva">
+
+                <form id="formReserva" novalidate>
                     <div class="form-group">
                         <label for="nome">Nome completo</label>
-                        <input type="text" id="nome" name="nome" maxlength="60" placeholder="Digite seu nome" required>
+                        <input type="text" id="nome" name="nome" maxlength="60"
+                            placeholder="Digite seu nome" autocomplete="name" required>
                     </div>
+
                     <button type="submit" class="btn btn-primary btn-full">Adicionar à lista</button>
-                    <p class="form-feedback" id="feedbackReserva" role="status"></p>
+                    <p class="form-feedback" id="feedbackReserva" role="status" aria-live="polite"></p>
                 </form>
             </div>
 
-            <div class="reservation-list-panel">
-                <div class="list-heading"><div><span class="eyebrow">02 / SUA LISTA</span><h2>Pré-reservas</h2></div><span class="reservation-counter" id="total">0</span></div>
+            <div class="reservation-list-panel reveal">
+                <div class="list-heading">
+                    <div>
+                        <span class="eyebrow">02 / SUA LISTA</span>
+                        <h2>Pré-reservas</h2>
+                    </div>
+                    <span class="reservation-counter" id="total" aria-label="Total de pré-reservas">0</span>
+                </div>
+
                 <ul class="reservation-list" id="lista" aria-live="polite">
                     <li class="list-empty">Nenhuma pré-reserva adicionada.</li>
                 </ul>
-                <button type="button" class="btn btn-secondary" id="limparReservas">Limpar lista</button>
+
+                <button type="button" class="btn btn-secondary" id="limparReservas">
+                    Limpar lista
+                </button>
+
+                <p class="reservation-note">
+                    Esta lista é salva somente neste navegador e não representa
+                    uma reserva confirmada.
+                </p>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-content"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a><p>Mobilidade inteligente para uma cidade em movimento.</p><span>© 2026 EcoBike SP</span></div></footer>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a>
+            <p>Mobilidade inteligente para uma cidade em movimento.</p>
+            <span>© 2026 EcoBike SP</span>
+        </div>
+    </footer>
 </body>
 </html>

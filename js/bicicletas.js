@@ -1,4 +1,6 @@
 
+'use strict';
+
 const botoesFiltro = document.querySelectorAll('.filter-btn');
 const bicicletas = document.querySelectorAll('.bike-card');
 const catalogCount = document.querySelector('#catalogCount');
@@ -20,7 +22,9 @@ function filtrarBicicletas(categoria) {
 
     if (catalogCount) {
         catalogCount.textContent =
-            `${quantidadeVisivel} ${quantidadeVisivel === 1 ? 'bicicleta encontrada' : 'bicicletas encontradas'}`;
+            `${quantidadeVisivel} ${quantidadeVisivel === 1
+                ? 'bicicleta encontrada'
+                : 'bicicletas encontradas'}`;
     }
 
     if (semResultados) {

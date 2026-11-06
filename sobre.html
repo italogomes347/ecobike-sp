@@ -6,55 +6,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conheça a EcoBike SP e nossa proposta de mobilidade urbana.">
     <title>Sobre | EcoBike SP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
     <script src="js/main.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
     <header class="site-header">
         <nav class="navbar container" aria-label="Navegação principal">
             <a class="brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a>
-            <div class="nav-links">
+
+            <button class="menu-toggle" id="menuToggle" type="button"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
                 <a href="index.html">Início</a>
                 <a href="bicicletas.html">Catálogo</a>
                 <a href="simulador.html">Simulador</a>
                 <a href="reservas.html">Pré-reservas</a>
-                <a class="active" href="sobre.html">Sobre</a>
+                <a class="active" aria-current="page" href="sobre.html">Sobre</a>
             </div>
+
             <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro">Modo escuro</button>
         </nav>
     </header>
 
-    <main>
-        <section class="page-hero container">
+    <main id="conteudo">
+        <section class="page-hero container reveal">
             <span class="eyebrow">SOBRE A ECOBIKE SP</span>
             <h1>Uma cidade melhor começa <span>pelo caminho.</span></h1>
             <p>Conheça nossa proposta e o compromisso com uma mobilidade urbana mais prática.</p>
         </section>
 
         <section class="about-section container">
-            <div class="about-image"><img src="https://s2-g1.glbimg.com/DOZzIxud_n7MTWChB1F31Q9W-co=/0x0:700x467/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/V/F/4gykwMQYCBpVUe5iBrcA/whatsapp-image-2019-05-15-at-16.49.55.jpeg" alt="Bicicleta em ambiente urbano"></div>
-            <div class="about-content">
+            <div class="about-image reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1000&q=85"
+                    alt="Ciclistas em um ambiente urbano"
+                    loading="lazy">
+            </div>
+
+            <div class="about-content reveal">
                 <span class="eyebrow">NOSSA PROPOSTA</span>
                 <h2>Mais liberdade para circular por São Paulo.</h2>
-                <p>A EcoBike SP é uma startup fictícia de aluguel de bicicletas por hora, criada para oferecer alternativas práticas de deslocamento na cidade.</p>
-                <p>Nosso catálogo reúne bicicletas urbanas, elétricas e cargo, permitindo que cada pessoa escolha o modelo mais adequado ao seu trajeto.</p>
+                <p>
+                    A EcoBike SP é uma startup fictícia de aluguel de bicicletas
+                    por hora, criada para oferecer alternativas práticas de
+                    deslocamento na cidade.
+                </p>
+                <p>
+                    Nosso catálogo reúne bicicletas urbanas, elétricas e cargo,
+                    permitindo que cada pessoa escolha o modelo mais adequado
+                    ao seu trajeto.
+                </p>
                 <a class="btn btn-primary" href="bicicletas.html">Conhecer o catálogo</a>
             </div>
         </section>
 
         <section class="values-section">
             <div class="container">
-                <span class="eyebrow">O QUE NOS MOVE</span>
-                <h2>Mobilidade pensada para a rotina.</h2>
-                <div class="values-grid">
-                    <article><span>01</span><h3>Praticidade</h3><p>Uma alternativa simples para os deslocamentos do cotidiano.</p></article>
-                    <article><span>02</span><h3>Escolha</h3><p>Modelos diferentes para necessidades e trajetos diferentes.</p></article>
-                    <article><span>03</span><h3>Flexibilidade</h3><p>Aluguel por hora para você planejar seu próprio percurso.</p></article>
+                <div class="reveal">
+                    <span class="eyebrow">O QUE NOS MOVE</span>
+                    <h2>Mobilidade pensada para a rotina.</h2>
                 </div>
+
+                <div class="values-grid">
+                    <article class="reveal">
+                        <span>01</span>
+                        <h3>Praticidade</h3>
+                        <p>Uma alternativa simples para os deslocamentos do cotidiano.</p>
+                    </article>
+
+                    <article class="reveal">
+                        <span>02</span>
+                        <h3>Escolha</h3>
+                        <p>Modelos diferentes para necessidades e trajetos diferentes.</p>
+                    </article>
+
+                    <article class="reveal">
+                        <span>03</span>
+                        <h3>Flexibilidade</h3>
+                        <p>Aluguel por hora para você planejar seu próprio percurso.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-cta">
+            <div class="container about-cta-content reveal">
+                <div>
+                    <span class="eyebrow">PRONTO PARA COMEÇAR?</span>
+                    <h2>Escolha sua bicicleta.</h2>
+                    <p>Confira os modelos e simule o valor do seu aluguel.</p>
+                </div>
+                <a href="bicicletas.html" class="btn btn-primary">Ver bicicletas</a>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-content"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a><p>Mobilidade inteligente para uma cidade em movimento.</p><span>© 2026 EcoBike SP</span></div></footer>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span> EcoBike<span>SP</span></a>
+            <p>Mobilidade inteligente para uma cidade em movimento.</p>
+            <span>© 2026 EcoBike SP</span>
+        </div>
+    </footer>
 </body>
 </html>
