@@ -1,8 +1,4 @@
-
 'use strict';
-
-/* ===== TEMA CLARO E ESCURO ===== */
-
 const themeToggle = document.querySelector('#themeToggle');
 
 function atualizarBotaoTema() {
@@ -47,7 +43,6 @@ if (themeToggle) {
     themeToggle.addEventListener('click', alternarTema);
 }
 
-/* ===== MENU PARA CELULARES ===== */
 
 const menuToggle = document.querySelector('#menuToggle');
 const navLinks = document.querySelector('#navLinks');
@@ -91,7 +86,6 @@ if (menuToggle && navLinks) {
     });
 }
 
-/* ===== ANIMAÇÕES AO EXPLORAR A PÁGINA ===== */
 
 const elementosAnimados = document.querySelectorAll('.reveal');
 

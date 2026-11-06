@@ -1,6 +1,4 @@
-
 'use strict';
-
 const formReserva = document.querySelector('#formReserva');
 const campoNome = document.querySelector('#nome');
 const lista = document.querySelector('#lista');
@@ -33,7 +31,6 @@ function carregarReservas() {
 
 let reservas = carregarReservas();
 
-/* ===== ARMAZENAMENTO ===== */
 
 function salvarReservas() {
     try {
@@ -46,7 +43,6 @@ function salvarReservas() {
     }
 }
 
-/* ===== FEEDBACK ===== */
 
 function mostrarFeedback(mensagem, erro = false) {
     if (!feedbackReserva) return;
@@ -55,7 +51,6 @@ function mostrarFeedback(mensagem, erro = false) {
     feedbackReserva.classList.toggle('feedback-error', erro);
 }
 
-/* ===== CONTADOR ===== */
 
 function atualizarContador() {
     if (total) {
@@ -63,7 +58,6 @@ function atualizarContador() {
     }
 }
 
-/* ===== RENDERIZAÇÃO DA LISTA ===== */
 
 function renderizarReservas() {
     if (!lista) return;
@@ -113,7 +107,6 @@ function renderizarReservas() {
     }
 }
 
-/* ===== ADICIONAR ===== */
 
 function adicionarReserva(nome) {
     const nomeLimpo = nome.trim().replace(/\s+/g, ' ');
@@ -156,7 +149,6 @@ function adicionarReserva(nome) {
     return true;
 }
 
-/* ===== REMOVER ===== */
 
 function removerReserva(id) {
     const quantidadeAnterior = reservas.length;
@@ -175,7 +167,6 @@ function removerReserva(id) {
     mostrarFeedback('Pré-reserva removida.');
 }
 
-/* ===== LIMPAR LISTA ===== */
 
 function limparListaReservas() {
     if (reservas.length === 0) return;
@@ -193,7 +184,6 @@ function limparListaReservas() {
     mostrarFeedback('Lista limpa com sucesso.');
 }
 
-/* ===== EVENTOS ===== */
 
 if (formReserva) {
     formReserva.addEventListener('submit', (evento) => {

@@ -1,8 +1,4 @@
-
 'use strict';
-
-/* ===== PREÇOS ===== */
-
 const precos = {
     urbana: 12,
     eletrica: 20,
@@ -15,7 +11,6 @@ const nomesBicicletas = {
     cargo: 'Cargo'
 };
 
-/* ===== FORMATAÇÃO ===== */
 
 function formatarMoeda(valor) {
     return valor.toLocaleString('pt-BR', {
@@ -24,7 +19,6 @@ function formatarMoeda(valor) {
     });
 }
 
-/* ===== CÁLCULO ===== */
 
 function calcularValor(horas, tipo) {
     const precoHora = precos[tipo];
@@ -52,7 +46,6 @@ function calcularValor(horas, tipo) {
     };
 }
 
-/* ===== EXIBIÇÃO ===== */
 
 function mostrarResultado(resultado) {
     const resultadoTexto = document.querySelector('#resultado');
@@ -92,7 +85,6 @@ function mostrarResultado(resultado) {
     detalhes.hidden = false;
 }
 
-/* ===== FORMULÁRIO ===== */
 
 const formSimulador = document.querySelector('#formSimulador');
 

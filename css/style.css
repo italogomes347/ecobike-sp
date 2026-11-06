@@ -116,7 +116,6 @@ button:disabled {
     transform: translateY(0);
 }
 
-/* ===== CABEÇALHO E NAVEGAÇÃO ===== */
 
 .site-header {
     position: sticky;
@@ -253,7 +252,6 @@ button:disabled {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ===== TEXTOS GERAIS ===== */
 
 .eyebrow {
     display: inline-block;
@@ -287,7 +285,6 @@ button:disabled {
     line-height: 1.8;
 }
 
-/* ===== BOTÕES ===== */
 
 .btn {
     display: inline-flex;
@@ -340,7 +337,6 @@ body.dark .btn-primary {
     width: 100%;
 }
 
-/* ===== PÁGINA INICIAL ===== */
 
 .hero {
     min-height: 590px;
@@ -550,7 +546,6 @@ body.dark .btn-primary {
     font-weight: 500;
 }
 
-/* ===== SEÇÃO DE EXPERIÊNCIA ===== */
 
 .experience-section {
     padding: 75px 0;
@@ -592,7 +587,6 @@ body.dark .btn-primary {
     transform: scale(1.04);
 }
 
-/* ===== CHAMADA PARA AÇÃO ===== */
 
 .callout-section {
     padding: 65px 0;
@@ -621,7 +615,6 @@ body.dark .btn-primary {
     font-size: 13px;
 }
 
-/* ===== CABEÇALHO DAS PÁGINAS INTERNAS ===== */
 
 .page-hero {
     padding-top: 82px;
@@ -637,7 +630,6 @@ body.dark .btn-primary {
     max-width: 610px;
 }
 
-/* ===== CATÁLOGO ===== */
 
 .catalog-section {
     padding-bottom: 100px;
@@ -819,7 +811,6 @@ body.dark .filter-btn.active {
     display: none;
 }
 
-/* ===== SIMULADOR ===== */
 
 .calculator-section {
     display: grid;
@@ -966,7 +957,6 @@ body.dark .result-icon {
     font-size: 10px;
 }
 
-/* ===== PRÉ-RESERVAS ===== */
 
 .reservation-section {
     display: grid;
@@ -1074,7 +1064,6 @@ body.dark .result-icon {
     line-height: 1.7;
 }
 
-/* ===== SOBRE ===== */
 
 .about-section {
     display: grid;
@@ -1172,7 +1161,6 @@ body.dark .result-icon {
     font-size: 13px;
 }
 
-/* ===== RODAPÉ ===== */
 
 .site-footer {
     padding: 28px 0;
@@ -1203,7 +1191,6 @@ body.dark .result-icon {
     font-size: 10px;
 }
 
-/* ===== ANIMAÇÕES DE ENTRADA ===== */
 
 .reveal {
     opacity: 0;
@@ -1228,7 +1215,6 @@ body.dark .result-icon {
     }
 }
 
-/* ===== TABLETS ===== */
 
 @media (max-width: 900px) {
     .navbar {
@@ -1294,7 +1280,6 @@ body.dark .result-icon {
     }
 }
 
-/* ===== CELULARES ===== */
 
 @media (max-width: 650px) {
     .container {
@@ -1440,7 +1425,7 @@ body.dark .result-icon {
     }
 }
 
-/* ===== ACESSIBILIDADE: MOVIMENTO REDUZIDO ===== */
+
 
 @media (prefers-reduced-motion: reduce) {
     *,

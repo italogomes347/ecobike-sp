@@ -1,6 +1,4 @@
-
 'use strict';
-
 const botoesFiltro = document.querySelectorAll('.filter-btn');
 const bicicletas = document.querySelectorAll('.bike-card');
 const catalogCount = document.querySelector('#catalogCount');
